@@ -5,14 +5,12 @@ import {
     NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem,
     NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
+    NavItem,
     NavbarText
 } from 'reactstrap';
+
+import { Link } from 'react-router-dom'
 
 class NavBar extends React.Component {
 
@@ -35,30 +33,15 @@ class NavBar extends React.Component {
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="mr-auto w-75" navbar>
                         <NavItem>
-                            <NavLink href="/components/">Components</NavLink>
+                            <Link to="/posts/"><NavLink>Posts</NavLink></Link>
                         </NavItem>
+
                         <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                            <Link to="/users"><NavLink>Users</NavLink></Link>
                         </NavItem>
-                        <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>
-                                Options
-              </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem>
-                                    Option 1
-                </DropdownItem>
-                                <DropdownItem>
-                                    Option 2
-                </DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>
-                                    Reset
-                </DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
+
                     </Nav>
-                    <NavbarText>Simple Text</NavbarText>
+                    <NavbarText>Logout</NavbarText>
                 </Collapse>
             </Navbar>
         )
