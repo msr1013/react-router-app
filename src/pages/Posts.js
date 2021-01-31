@@ -1,5 +1,8 @@
-import React from 'react'
-
+import React from 'react';
+import {
+    Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button, CardFooter
+} from 'reactstrap';
 class Posts extends React.Component {
 
     state = {
@@ -27,7 +30,22 @@ class Posts extends React.Component {
     }
     render() {
         return <div className="container">
-            <h3>Posts</h3>
+            {
+                this.state.posts.map(post => {
+                    return (
+                        <Card className="mt-3">
+                            <CardBody>
+                                <CardTitle tag="h5">{post.title}</CardTitle>
+                                <CardText>{post.body}</CardText>
+                                <CardFooter>
+                                    <CardSubtitle>Created By : {post.userId}</CardSubtitle>
+                                </CardFooter>
+                            </CardBody>
+                        </Card>
+                    )
+                })
+            }
+
         </div>
     }
 }
